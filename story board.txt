@@ -1,0 +1,31 @@
+1 - Usuário mexendo no computador/suporte analisando desempenho dos computadores
+
+2 - Usuário com computador travado/suporte vendo que auele determinado computador está com 100% da CPU sendo utilizada
+
+3 - Suporte envia mensagem a este usuário com relátorio identificando o problema/usuário recebendo a mensagem
+
+4 - Suporte emite relatório com número, porcentagem de uso de cada aplicação sendo utiliza no computador/usuário recebe o relatório
+
+5 - Usuário relata que continua travando/suporte instrui a fechar mais algumas aplicações mas utilizando o gerenciador de tarefas
+
+6 - Usuário relata novamente que continua travando/suporte então realiza o acesso remoto
+
+7 - Suporte arruma a máquina 
+
+8 - Suporte gera relatório referente ao problema|máquina
+
+
+
+
+
+1 - Usuário trabalhando
+
+2 - Sistema envia pop-up avisando que ele está a muito tempo na mesma atividade
+
+3 - Usuário vendo o pop-up e decidindo se vai fazer a pausa neste momento ou não
+
+4 - Usuário realiza a pausa rápida
+
+5 - Sistema faz relatório referente ao tempo de uso de cada aplicação
+
+6 - Gerente olhando relatório para "medir" rendimento
