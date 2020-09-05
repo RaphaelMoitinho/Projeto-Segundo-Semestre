@@ -10,13 +10,27 @@
 
 <body>
 
-    <header>
+    <header id="header">
         <div id="logo">
-            <img src="popcorn.png" alt="">
+            <img src="Virtual.png" alt="">
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a class="link" href="">Home</a>
+                </li>
+                <li>
+                    <a class="link" href="">Sobre</a>
+                </li>
+                <li>
+                    <a class="link" href="">Contato</a>
+                </li>
+            </ul>
         </div>
     </header>
 
     <div id="imagem-fundo">
+        <img src="fundo2.jpeg">
         <div id="desfocar">
             <div id="fundoName">
                 <div id="name">
@@ -28,11 +42,47 @@
     </div>
 
     <div class="container">
+        <img src="fundoServicos.png" class="fundoCont" alt="">
         <div id="servicos">
-            
+            <span id="tituloServicos">Nossos Serviços</span> <br>
+            <p id="descricaoServicos"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptate a
+                error vel odit quos expedita, ullam sint numquam quo dignissimos quia nesciunt possimus aliquam
+                aspernatur facilis impedit deleniti accusamus!
+            </p> <br>
+            <button id="conhecerServicos">Conhecer</button>
+        </div>
+
+
+        <div id="contact" class="contato">
+            <span>Contate-nos</span> <br>
+            <div>
+                <img src="instagram.png" alt="">
+            </div>
+
+            <div>
+                <img src="facebook.png" alt="">
+            </div>
+            <div>
+                <img src="linkedin.png" alt="">
+            </div>
         </div>
     </div>
 
+    <footer class="footer">
+        <span>Todos os direitos reservados ©</span>
+    </footer>
 </body>
 
 </html>
+<script>
+
+setInterval(() => {
+   if(scrollY > 0){
+     header.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+   }
+   else{
+    header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+   }
+}, 1000);
+
+</script>

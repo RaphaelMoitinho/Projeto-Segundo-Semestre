@@ -13,11 +13,11 @@ body{
 }
 
 ::-webkit-scrollbar-track{
-    background: white;   
+    background: black;   
 }
 
 ::-webkit-scrollbar-thumb{
-    background: black;
+    background: white;
 }
 
 header {
@@ -27,32 +27,55 @@ header {
     position: fixed;
     z-index: 1;
     transition: all 0.7s;
-}
-
-
-header:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    backdrop-filter: blur(2px);
 }
 
 header #logo {
     width: 20%;
     height: 100%;
+    margin-left: 10%;
 }
 
 header #logo img {
-    top: 20%;
-    margin-left:25%;
     width: 50%;
-    height: 60%;
+    height: 100%;
+}
+
+header .menu{
+    width: 60%;
+    height: 100%;
+}
+
+header .menu ul{
+    float: right;
+    height: 100%;
+}
+
+header .menu ul li{
+    display: inline;
+    text-decoration: none;
+    font-size: 2vw;
+}
+
+header .menu ul li a{
+    color: black;
+    text-decoration: none;
 }
 
 #imagem-fundo {
     width: 100vw;
     height: 100vh;
-    background-image: url(fundo2.jpeg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100%;
+    position: relative;
+}
+
+#imagem-fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
 }
 
 #imagem-fundo #desfocar {
@@ -63,11 +86,11 @@ header #logo img {
 
 #imagem-fundo #desfocar #fundoName{
     font-size: 3.5vw;
-    width: 60%;
+    width: 80%;
     height: 45%;
     position: relative;
     top: 30%;
-    left: 20%;
+    left: 10%;
     text-align: center;
     border-radius: 10px;
     backdrop-filter: blur(1px);
@@ -75,7 +98,7 @@ header #logo img {
 }
 
 #imagem-fundo #desfocar #fundoName #name {
-    font-size: 3.5vw;
+    font-size: 5.5vw;
     width: 70%;
     height: 70%;
     position: relative;
@@ -91,14 +114,110 @@ header #logo img {
 
 .container {
     width: 100%;
-    height: 60vh;
-    background-color: coral;
+    height: auto;
     display: inline-block;
+}
+
+.container .fundoCont{
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
 }
 
 .container #servicos {
     width: 80%;
     height: 80%;
-    margin-top: 8vh;
-    background-color: cornflowerblue;
+    margin-top: 5vh;
+    margin-left: 10%;
+    margin-bottom: 3%;
+}
+
+.container #servicos #tituloServicos{
+    color: white;
+    font-size: 5.5vw;
+    text-shadow: 0px 3px 5px black;
+}
+
+.container #servicos #descricaoServicos{
+    color: white;
+    font-size: 2vw;
+    margin-left: 10%;
+    margin-top: 2%;
+    width: 80%;
+}
+
+.container #servicos #conhecerServicos{
+    width: 20%;
+    height: 5vh;
+    font-size: 1.2vw;
+    border-radius: 7px;
+    border: solid 1px;
+    background-color: #232323;
+    color: white;
+    box-shadow: 0px 0px 7px 1px black;
+    margin-left: 40%;
+    margin-bottom: 1%;
+    cursor: pointer;
+    outline: none;
+}
+
+.container #servicos #conhecerServicos:active{
+    transform: scale(0.9);
+}
+
+.container #contact{
+    width: 80%;
+    height: 80%;
+    margin-top: 5vh;
+    margin-left: 10%;
+    margin-bottom: 3%;
+    border-top: 1px solid white;
+}
+
+.container .contato{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container .contato span{
+    color: white;
+    font-size: 5.5vw;
+    text-shadow: 0px 3px 5px black;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.container .contato div{
+    height: 100%;
+    width: 30%;
+    margin-right: 3%;
+}
+
+.container .contato div img{
+    width: 40%;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.container .contato div img:hover{
+    transform: scale(1.05)
+}
+
+.container .footer{
+
+}
+
+
+/* Inicio da responsividade */
+
+@media (max-width: 715px){
+    .container #servicos #descricaoServicos{
+        font-size: 3vw;
+    }
+
+    .container #servicos #conhecerServicos{
+        font-size: 2.2vw;
+    }
 }
