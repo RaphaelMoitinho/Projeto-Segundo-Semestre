@@ -16,6 +16,9 @@
         </div>
         <div class="menu">
             <ul>
+                <li id="liUm" onclick="mostrar()">
+                    <img src="open-menu.png" alt="">
+                </li>
                 <li>
                     <a class="link" href="">Home</a>
                 </li>
@@ -30,10 +33,11 @@
     </header>
 
     <div id="imagem-fundo">
-        <img src="fundo2.jpeg">
+        <img class="imagem-fundo" src="fundo2.jpeg">
         <div id="desfocar">
             <div id="fundoName">
                 <div id="name">
+                    <img src="Virtual.png" alt="">
                     Virtual Brain Consulting <br>
                     <span id="descricaoName"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. </span>
                 </div>
@@ -42,7 +46,6 @@
     </div>
 
     <div class="container">
-        <img src="fundoServicos.png" class="fundoCont" alt="">
         <div id="servicos">
             <span id="tituloServicos">Nossos Serviços</span> <br>
             <p id="descricaoServicos"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptate a
@@ -76,13 +79,75 @@
 </html>
 <script>
 
-setInterval(() => {
-   if(scrollY > 0){
-     header.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-   }
-   else{
-    header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-   }
-}, 1000);
+    let tagsLI = document.getElementsByTagName('li');
+    let tagsA = document.getElementsByTagName('a');
+
+    // setInterval(() => {
+    // }, 100);
+
+    let redmensionamento = function () {
+        if (screen.width <= 900) {
+            tagsLI[0].style.display = 'block';
+            for (let i = 1; i < tagsLI.length; i++) {
+                tagsLI[i].style.display = 'none';
+            }
+            header.style.height = '15vh'
+        } else {
+            tagsLI[0].style.display = 'none';
+            for (let i = 1; i < tagsLI.length; i++) {
+                tagsLI[i].style.display = 'block';
+            }
+            for (let i = 0; i < tagsA.length; i++) {
+                tagsA[i].style.color = 'black';
+            }
+            header.style.height = '100vh'
+        }
+        tagsLI[0].setAttribute("onclick", "mostrar()");
+    };
+
+    window.onresize = redmensionamento;
+    onload = redmensionamento
+
+    function mostrar() {
+        header.style.height = 'auto'
+        tagsLI[0].setAttribute("onclick", "fecharMenu()");
+        for (let i = 0; i < tagsLI.length; i++) {
+            tagsLI[i].style.display = 'block';
+        }
+        for (let i = 0; i < tagsA.length; i++) {
+            tagsA[i].style.color = 'white';
+        }
+        header.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    }
+
+    function fecharMenu() {
+        if (screen.width <= 900) {
+            header.style.height = '15vh'
+        } else {
+            header.style.height = '100vh'
+        }
+        tagsLI[0].setAttribute("onclick", "mostrar()");
+        for (let i = 1; i < tagsLI.length; i++) {
+            tagsLI[i].style.display = 'none';
+        }
+        header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    }
+
+    window.onscroll = function () {
+        if (scrollY > 0) {
+            header.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            header.style.borderRight = '1px solid black';
+            for (let i = 0; i < tagsA.length; i++) {
+                tagsA[i].style.color = 'white';
+            }
+        }
+        else {
+            header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+            header.style.borderRight = '1px solid white';
+            for (let i = 0; i < tagsA.length; i++) {
+                tagsA[i].style.color = 'black';
+            }
+        }
+    }
 
 </script>
