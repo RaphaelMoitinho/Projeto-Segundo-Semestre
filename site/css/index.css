@@ -26,7 +26,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     transition: all 0.7s;
     border-right: 1px solid white;
     border-top-right-radius: 20px;
@@ -62,7 +62,9 @@ header .menu ul li{
     text-decoration: none;
     font-size: 2vw;
     cursor: pointer;
+    font-weight: 600;
     margin-bottom: 30%;
+    text-shadow: 0px 0px 15px white;
 }
 
 header .menu ul li:nth-child(0){
@@ -80,7 +82,7 @@ header .menu ul li a{
 }
 
 header .menu ul li a:hover{
-    color: red;
+    color: #0059ff!important;
 }
 
 #imagem-fundo {
@@ -138,7 +140,7 @@ header .menu ul li a:hover{
     width: 100%;
     height: auto;
     display: inline-block;
-    background-image: url(fundoServicos.png);
+    background-image: url(../img/fundoServicos.png);
     background-size: cover;
     background-position: center center;
 }
