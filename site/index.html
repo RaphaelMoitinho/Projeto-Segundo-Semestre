@@ -21,35 +21,38 @@
                     <img src="img/open-menu.png" alt="">
                 </li>
                 <li>
-                    <a class="link" href="">Home</a>
+                    <a class="link" href="#imagemFundo">Home</a>
                 </li>
                 <li>
-                    <a class="link" href="">Sobre</a>
+                    <a class="link" href="#container">Sobre</a>
                 </li>
                 <li>
-                    <a class="link" href="">Contato</a>
+                    <a class="link" href="#container">Contato</a>
                 </li>
                 <li>
-                    <a class="link" href="">Login</a>
+                    <a class="link" onclick="trazerLogin()">Login</a>
                 </li>
             </ul>
         </div>
     </header>
 
-    <div id="imagem-fundo">
-        <img class="imagem-fundo" src="img/fundo2.jpeg">
+    <!-- Home -->
+    <div id="imagemFundo">
+        <img class="imagemFundo" src="img/fundo2.jpeg">
         <div id="desfocar">
             <div id="fundoName">
                 <div id="name">
-                    <img src="Virtual.png" alt="">
+                    <img src="img/Virtual.png" alt="">
                     Virtual Brain Consulting <br>
                     <span id="descricaoName"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. </span>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Final da home -->
 
-    <div class="container">
+    <!-- Inicio dos serviços -->
+    <div id="container" class="container">
         <div id="servicos">
             <span id="tituloServicos">Nossos Serviços</span> <br>
             <p id="descricaoServicos"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptate a
@@ -74,6 +77,40 @@
             </div>
         </div>
     </div>
+    <!-- Final do Serviços -->
+
+
+    <!-- Login/Cadastro -->
+
+    <div id="paiLoginCadastro">
+        <div id="trocaLoginCadastro">
+            <div id="login">
+                <form action="">
+                    <label for="inputLogin">Login</label> <br>
+                    <input type="text" id="inputLogin"> <br>
+                    <label for="inputSenha">Senha</label> <br>
+                    <input type="text" id="inputSenha"> <br>
+                    <button type="submit">Enviar</button>
+                    <button type="button" onclick="cadastro()">Cadastrar</button>
+                </form>
+            </div>
+            <div id="cadastro">
+                <form action="">
+                    <label for="inputCadastro">Cadastro</label> <br>
+                    <input type="text" id="inputCadastro"> <br>
+                    <label for="inputCad">Cad</label> <br>
+                    <input type="text" id="inputCad"> <br>
+                    <button type="submit">Enviar</button>
+                    <button type="button" onclick="login()">Login</button>
+                </form>
+            </div>
+        </div>
+        <div id="convite">
+            
+        </div>
+    </div>
+
+    <!-- Login/Cadastro -->
 
     <footer class="footer">
         <span>Todos os direitos reservados ©</span>
@@ -110,7 +147,7 @@
     };
 
     window.onresize = redmensionamento;
-    window.onload = redmensionamento
+    window.onload = redmensionamento;
 
     function mostrar() {
         header.style.height = 'auto'
@@ -152,6 +189,43 @@
                 tagsA[i].style.color = 'black';
             }
         }
+    }
+
+    function trazerLogin(){
+        imagemFundo.style.filter = 'blur(3px)';
+        container.style.filter = 'blur(3px)';
+
+        paiLoginCadastro.style.display = 'block';
+        setTimeout(() => {
+            paiLoginCadastro.style.left = '17.5vw'; 
+        }, 100);
+
+        tagsA[tagsA.length-1].setAttribute("onclick", "levarLogin()");
+    }
+
+    function levarLogin(){
+        imagemFundo.style.filter = 'blur(0px)';
+        container.style.filter = 'blur(0px)';
+
+        paiLoginCadastro.style.left = '100vw';
+        setTimeout(() => {
+            paiLoginCadastro.style.display = 'none';
+        }, 500);
+
+        tagsA[tagsA.length-1].setAttribute("onclick", "trazerLogin()");
+    }
+
+    function cadastro(){
+        if (innerWidth < 715){
+            trocaLoginCadastro.style.marginLeft = '-100%';
+        }
+        else{
+            trocaLoginCadastro.style.marginLeft = '-50%';
+        }
+    }
+
+    function login(){
+        trocaLoginCadastro.style.marginLeft = '0%';
     }
 
 </script>
