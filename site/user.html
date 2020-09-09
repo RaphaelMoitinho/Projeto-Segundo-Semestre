@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -7,10 +7,10 @@
     <title>Virtual Brain Consulting</title>
     <link rel="shortcut icon" href="img/Virtual.png" type="image/x-icon">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/user.css">
 </head>
 
 <body>
-
     <header id="header">
         <div id="logo">
             <img src="img/Virtual.png" alt="">
@@ -30,14 +30,189 @@
                     <a class="link" href="#container">Contato</a>
                 </li>
                 <li>
-                    <a class="link" onclick="trazerLogin()">Entrar</a>
+                    <a class="link" onclick="sair()">Sair</a>
                 </li>
             </ul>
         </div>
     </header>
 
+    <div id="paiUser">
+        <div id="containerUser">
+            <div id="perfilUser">
+                <img src="img/c6bank.png" alt=""> <br>
+            </div>
+            <div id="userAlteracao">
+                <div id="userNome">
+                    C6 Bank
+                </div>
+                <div id="userBtns">
+                    <button>Nome</button>
+                    <button>Perfil</button>
+                    <button>Capa</button>
+                </div>
+            </div>
+            <div class="graficosUser">
+                <div id="grafico1">
+                    <canvas id="canvas"></canvas>
+                </div>
+                <div id="grafico2">
+                    <canvas id="canvas2"></canvas>
+                </div>
+                <div id="grafico3">
+                    <canvas id="canvas3"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
-
 <script src="js/header.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<script>
+
+    var config = {
+        type: 'bar',
+        data: {
+            labels: ['CPU', 'Memória', 'RAM'],
+            datasets: [{
+                label: 'Problemas ao Dia',
+                backgroundColor: ['darkblue', 'black', 'darkred'],
+                borderColor: 'rgba(255,255,255,1)',
+                borderWidth: 3,
+                data: ['10','20','30'],
+            }]
+        },
+        options: {
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: '#ffffff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        label: 'Data'
+                    }
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        label: 'Vendas'
+                    },
+                    ticks: {
+                        min: 0
+                    },
+                }]
+            },
+        }
+    };
+
+    // Gráfico 2
+    var config2 = {
+        type: 'pie',
+        data: {
+            labels: ['CPU', 'Memória', 'RAM'],
+            datasets: [{
+                label: '',
+                backgroundColor: ['darkblue', 'black', 'darkred'],
+                borderColor: 'rgba(255,255,255,1)',
+                borderWidth: 2,
+                data: ['10','20','30'],
+            }]
+        },
+        options: {
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: '#ffffff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                    },
+                    display: false
+                }],
+            },
+        }
+    };
+
+    // grafico 3
+    var config3 = {
+        type: 'horizontalBar',
+        data: {
+            labels: ['CPU', 'Memória', 'RAM'],
+            datasets: [{
+                label: 'Consumo em %',
+                backgroundColor: ['darkblue', 'black', 'darkred'],
+                borderColor: 'rgba(255,255,255,1)',
+                borderWidth: 3,
+                data: ['10','20','30'],
+            }]
+        },
+        options: {
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: '#ffffff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        label: 'Data'
+                    },
+                    ticks: {
+                        min: 0
+                    },
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        label: 'Vendas'
+                    },
+                }]
+            },
+        }
+    };
+
+    // Renderização dos gráficos
+    function chart() {
+        var ctx = document.getElementById('canvas').getContext('2d');
+        window.myLine = new Chart(ctx, config);
+        var ctx = document.getElementById('canvas2').getContext('2d');
+        window.myLine = new Chart(ctx, config2);
+        var ctx = document.getElementById('canvas3').getContext('2d');
+        window.myLine = new Chart(ctx, config3);
+    };
+
+    chart();
+
+    function sair(){
+        sessionStorage.removeItem;
+        window.location.href = 'index.html';
+    }
+
+    function verificacao(){
+        if (sessionStorage.length === 0){
+            window.location.href = 'index.html';
+        }
+    }
+
+    verificacao();
+
+</script>

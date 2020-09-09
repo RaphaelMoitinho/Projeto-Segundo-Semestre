@@ -82,11 +82,11 @@
     <div id="paiLoginCadastro">
         <div id="trocaLoginCadastro">
             <div id="login">
-                <form action="">
+                <form id="formLogin">
                     <label>Bem-Vindo de Volta!</label> <br>
                     <input type="text" placeholder="Login" id="inputLogin"> <br>
                     <input type="password" placeholder="Senha" id="inputSenha"> <br>
-                    <button type="submit">Entrar</button>
+                    <button type="button" onclick="entrar()">Entrar</button>
                     <button type="button" onclick="cadastro()">Cadastrar</button>
                 </form>
             </div>
@@ -96,7 +96,7 @@
                     <input type="text" placeholder="Login" id="inputCadastro"> <br>
                     <input type="text" placeholder="Email" id="inputEmailCadastro"> <br>
                     <input type="password" placeholder="Senha" id="inputSenhaCadastro"> <br>
-                    <button type="submit">Cadastrar</button>
+                    <button type="button">Cadastrar</button>
                     <button type="button" onclick="login()">Login</button>
                 </form>
             </div>
@@ -171,5 +171,13 @@
             tagsh3[0].innerText = 'Entre na';
             tagsh3[0].style.opacity = '1';
         }, 500);
+    }
+
+    function entrar(){
+        let login = inputLogin.value;
+        let senha = inputSenha.value;
+
+        sessionStorage.setItem('login', login);
+        window.location.href = 'user.html';
     }
 </script>
