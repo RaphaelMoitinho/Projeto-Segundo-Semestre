@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -30,7 +30,7 @@
                     <a class="link" href="#container">Contato</a>
                 </li>
                 <li>
-                    <a class="link" onclick="trazerLogin()">Login</a>
+                    <a class="link" onclick="trazerLogin()">Entrar</a>
                 </li>
             </ul>
         </div>
@@ -42,8 +42,7 @@
         <div id="desfocar">
             <div id="fundoName">
                 <div id="name">
-                    <img src="img/Virtual.png" alt="">
-                    Virtual Brain Consulting <br>
+                    <img src="img/Virtual.png" alt=""> Virtual Brain Consulting <br>
                     <span id="descricaoName"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. </span>
                 </div>
             </div>
@@ -55,9 +54,7 @@
     <div id="container" class="container">
         <div id="servicos">
             <span id="tituloServicos">Nossos Serviços</span> <br>
-            <p id="descricaoServicos"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptate a
-                error vel odit quos expedita, ullam sint numquam quo dignissimos quia nesciunt possimus aliquam
-                aspernatur facilis impedit deleniti accusamus!
+            <p id="descricaoServicos"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptate a error vel odit quos expedita, ullam sint numquam quo dignissimos quia nesciunt possimus aliquam aspernatur facilis impedit deleniti accusamus!
             </p> <br>
             <button id="conhecerServicos">Conhecer</button>
         </div>
@@ -86,27 +83,29 @@
         <div id="trocaLoginCadastro">
             <div id="login">
                 <form action="">
-                    <label for="inputLogin">Login</label> <br>
-                    <input type="text" id="inputLogin"> <br>
-                    <label for="inputSenha">Senha</label> <br>
-                    <input type="text" id="inputSenha"> <br>
-                    <button type="submit">Enviar</button>
+                    <label>Bem-Vindo de Volta!</label> <br>
+                    <input type="text" placeholder="Login" id="inputLogin"> <br>
+                    <input type="password" placeholder="Senha" id="inputSenha"> <br>
+                    <button type="submit">Entrar</button>
                     <button type="button" onclick="cadastro()">Cadastrar</button>
                 </form>
             </div>
             <div id="cadastro">
-                <form action="">
-                    <label for="inputCadastro">Cadastro</label> <br>
-                    <input type="text" id="inputCadastro"> <br>
-                    <label for="inputCad">Cad</label> <br>
-                    <input type="text" id="inputCad"> <br>
-                    <button type="submit">Enviar</button>
+                <form id="formCadastro" action="">
+                    <label>Cadastre-se!</label> <br>
+                    <input type="text" placeholder="Login" id="inputCadastro"> <br>
+                    <input type="text" placeholder="Email" id="inputEmailCadastro"> <br>
+                    <input type="password" placeholder="Senha" id="inputSenhaCadastro"> <br>
+                    <button type="submit">Cadastrar</button>
                     <button type="button" onclick="login()">Login</button>
                 </form>
             </div>
         </div>
         <div id="convite">
-            
+            <div id="textoConvite">
+                <h3>Entre na</h3>
+                <h4>Virtual Brain Consulting</h4>
+            </div>
         </div>
     </div>
 
@@ -118,92 +117,29 @@
 </body>
 
 </html>
+
+<script src="js/header.js"></script>
 <script>
+    let tagsh3 = document.getElementsByTagName('h3');
+    let tagsInput = document.getElementsByTagName('input');
 
-    let tagsLI = document.getElementsByTagName('li');
-    let tagsA = document.getElementsByTagName('a');
-
-    // setInterval(() => {
-    // }, 100);
-
-    let redmensionamento = function () {
-        if (window.innerWidth <= 900) {
-            tagsLI[0].style.display = 'block';
-            for (let i = 1; i < tagsLI.length; i++) {
-                tagsLI[i].style.display = 'none';
-            }
-            header.style.height = '15vh'
-        } else {
-            tagsLI[0].style.display = 'none';
-            for (let i = 1; i < tagsLI.length; i++) {
-                tagsLI[i].style.display = 'block';
-            }
-            for (let i = 0; i < tagsA.length; i++) {
-                tagsA[i].style.color = 'black';
-            }
-            header.style.height = '100vh'
-        }
-        tagsLI[0].setAttribute("onclick", "mostrar()");
-    };
-
-    window.onresize = redmensionamento;
-    window.onload = redmensionamento;
-
-    function mostrar() {
-        header.style.height = 'auto'
-        tagsLI[0].setAttribute("onclick", "fecharMenu()");
-        for (let i = 0; i < tagsLI.length; i++) {
-            tagsLI[i].style.display = 'block';
-        }
-        for (let i = 0; i < tagsA.length; i++) {
-            tagsA[i].style.color = 'white';
-        }
-        header.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    for (let i = 0; i < tagsInput.length; i++) {
+        tagsInput[i].setAttribute("required", "required");
     }
 
-    function fecharMenu() {
-        if (window.innerWidth <= 900) {
-            header.style.height = '15vh'
-        } else {
-            header.style.height = '100vh'
-        }
-        tagsLI[0].setAttribute("onclick", "mostrar()");
-        for (let i = 1; i < tagsLI.length; i++) {
-            tagsLI[i].style.display = 'none';
-        }
-        header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-    }
-
-    window.onscroll = function () {
-        if (scrollY > 0) {
-            header.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-            header.style.borderRight = '1px solid black';
-            for (let i = 0; i < tagsA.length; i++) {
-                tagsA[i].style.color = 'white';
-            }
-        }
-        else {
-            header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-            header.style.borderRight = '1px solid white';
-            for (let i = 0; i < tagsA.length; i++) {
-                tagsA[i].style.color = 'black';
-            }
-        }
-    }
-
-    function trazerLogin(){
+    function trazerLogin() {
         imagemFundo.style.filter = 'blur(3px)';
         container.style.filter = 'blur(3px)';
 
         paiLoginCadastro.style.display = 'block';
         setTimeout(() => {
-            paiLoginCadastro.style.left = '17.5vw'; 
+            paiLoginCadastro.style.left = '20vw';
         }, 100);
 
-        tagsA[tagsA.length-1].setAttribute("onclick", "levarLogin()");
+        tagsA[tagsA.length - 1].setAttribute("onclick", "levarLogin()");
     }
 
-    function levarLogin(){
+    function levarLogin() {
         imagemFundo.style.filter = 'blur(0px)';
         container.style.filter = 'blur(0px)';
 
@@ -212,20 +148,28 @@
             paiLoginCadastro.style.display = 'none';
         }, 500);
 
-        tagsA[tagsA.length-1].setAttribute("onclick", "trazerLogin()");
+        tagsA[tagsA.length - 1].setAttribute("onclick", "trazerLogin()");
     }
 
-    function cadastro(){
-        if (innerWidth < 715){
+    function cadastro() {
+        if (innerWidth < 715) {
             trocaLoginCadastro.style.marginLeft = '-100%';
-        }
-        else{
+        } else {
             trocaLoginCadastro.style.marginLeft = '-50%';
         }
+        tagsh3[0].style.opacity = '0';
+        setTimeout(() => {
+            tagsh3[0].innerText = 'Seja';
+            tagsh3[0].style.opacity = '1';
+        }, 500);
     }
 
-    function login(){
+    function login() {
         trocaLoginCadastro.style.marginLeft = '0%';
+        tagsh3[0].style.opacity = '0';
+        setTimeout(() => {
+            tagsh3[0].innerText = 'Entre na';
+            tagsh3[0].style.opacity = '1';
+        }, 500);
     }
-
 </script>

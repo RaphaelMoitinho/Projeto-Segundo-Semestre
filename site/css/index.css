@@ -1,22 +1,23 @@
 * {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
-body{
+body {
     overflow-x: hidden;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 5px;
     border-radius: 5px;
 }
 
-::-webkit-scrollbar-track{
-    background: black;   
+::-webkit-scrollbar-track {
+    background: black;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background: white;
 }
 
@@ -46,18 +47,18 @@ header #logo img {
     margin-left: 7.5%;
 }
 
-header .menu{
+header .menu {
     width: 85%;
     height: 100%;
     margin-left: 7.5%;
 }
 
-header .menu ul{
+header .menu ul {
     float: right;
     height: 100%;
 }
 
-header .menu ul li{
+header .menu ul li {
     display: inline;
     text-decoration: none;
     font-size: 2vw;
@@ -67,21 +68,21 @@ header .menu ul li{
     text-shadow: 0px 0px 15px white;
 }
 
-header .menu ul li:nth-child(0){
+header .menu ul li:nth-child(0) {
     display: none;
 }
 
-header .menu ul li img{
+header .menu ul li img {
     height: 5vh;
 }
 
-header .menu ul li a{
+header .menu ul li a {
     color: black;
     transition: all 1s;
     text-decoration: none;
 }
 
-header .menu ul li a:hover{
+header .menu ul li a:hover {
     color: #0059ff!important;
 }
 
@@ -105,7 +106,7 @@ header .menu ul li a:hover{
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#imagemFundo #desfocar #fundoName{
+#imagemFundo #desfocar #fundoName {
     font-size: 3.5vw;
     width: 80%;
     height: 45%;
@@ -113,6 +114,7 @@ header .menu ul li a:hover{
     top: 30%;
     left: 10%;
     text-align: center;
+    overflow: hidden;
     border-radius: 10px;
     backdrop-filter: blur(1px);
     background-color: rgba(0, 0, 0, 0.5);
@@ -129,7 +131,7 @@ header .menu ul li a:hover{
     color: white;
 }
 
-#imagemFundo #desfocar #fundoName #name img{
+#imagemFundo #desfocar #fundoName #name img {
     display: none;
 }
 
@@ -155,13 +157,13 @@ header .menu ul li a:hover{
     margin-bottom: 3%;
 }
 
-.container #servicos #tituloServicos{
+.container #servicos #tituloServicos {
     color: white;
     font-size: 5.5vw;
     text-shadow: 0px 3px 5px black;
 }
 
-.container #servicos #descricaoServicos{
+.container #servicos #descricaoServicos {
     color: white;
     font-size: 2vw;
     margin-left: 10%;
@@ -169,7 +171,7 @@ header .menu ul li a:hover{
     width: 80%;
 }
 
-.container #servicos #conhecerServicos{
+.container #servicos #conhecerServicos {
     width: 20%;
     height: 5vh;
     font-size: 1.2vw;
@@ -184,11 +186,11 @@ header .menu ul li a:hover{
     outline: none;
 }
 
-.container #servicos #conhecerServicos:active{
+.container #servicos #conhecerServicos:active {
     transform: scale(0.9);
 }
 
-.container #contact{
+.container #contact {
     width: 80%;
     height: 80%;
     margin-top: 5vh;
@@ -197,13 +199,13 @@ header .menu ul li a:hover{
     border-top: 1px solid white;
 }
 
-.container .contato{
+.container .contato {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
 }
 
-.container .contato span{
+.container .contato span {
     color: white;
     font-size: 5.5vw;
     text-shadow: 0px 3px 5px black;
@@ -211,28 +213,29 @@ header .menu ul li a:hover{
     margin-bottom: 2%;
 }
 
-.container .contato div{
+.container .contato div {
     height: 100%;
     width: 30%;
     margin-right: 3%;
 }
 
-.container .contato div img{
+.container .contato div img {
     width: 40%;
     cursor: pointer;
     transition: transform 0.5s;
+    border-radius: 10px;
 }
 
-.container .contato div img:hover{
+.container .contato div img:hover {
     transform: scale(1.05)
 }
 
-#paiLoginCadastro{
+#paiLoginCadastro {
     position: fixed;
     height: 65vh;
-    width: 65vw;
+    width: 60vw;
     left: 100vw;
-    top: 17.2vh;
+    top: 17.5vh;
     background-color: black;
     overflow: hidden;
     border-radius: 15px;
@@ -241,61 +244,139 @@ header .menu ul li a:hover{
     display: none;
 }
 
-#paiLoginCadastro #trocaLoginCadastro{
+#paiLoginCadastro #trocaLoginCadastro {
     width: 100%;
     height: 100%;
     display: flex;
     transition: margin-left 1s ease-in-out;
 }
 
-#paiLoginCadastro #trocaLoginCadastro #login{
+#paiLoginCadastro #trocaLoginCadastro #login {
     height: 100%;
     width: 50%;
     position: relative;
-    background-color: red;
+    background-color: rgba(255, 255, 255, 0.055);
 }
 
-#paiLoginCadastro #trocaLoginCadastro #login form{
+#paiLoginCadastro #trocaLoginCadastro form {
     height: 80%;
     width: 80%;
     margin-top: 10%;
     margin-left: 10%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-#paiLoginCadastro #trocaLoginCadastro #login label{
-
+#paiLoginCadastro #trocaLoginCadastro label {
+    font-size: 4vw;
+    font-weight: 800;
+    color: white;
 }
 
-#paiLoginCadastro #trocaLoginCadastro #login input{
-    
+#paiLoginCadastro #trocaLoginCadastro input {
+    width: 75%;
+    margin-left: 12.5%;
+    height: 30px;
+    margin-top: -9%;
+    outline: none;
+    font-size: 150%;
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-bottom: 1px solid;
+    transition: all 0.5s;
 }
 
-#paiLoginCadastro #trocaLoginCadastro #cadastro{
+#paiLoginCadastro #trocaLoginCadastro input:focus {
+    box-shadow: 0px 5px 4px -2px white;
+    border-radius: 2px;
+}
+
+#paiLoginCadastro #trocaLoginCadastro button {
+    height: 30px;
+    width: 37%;
+    font-size: 1.5vw;
+    outline: none;
+    background: none;
+    border: 2px solid white;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+}
+
+#paiLoginCadastro #trocaLoginCadastro button:active {
+    transform: scale(0.9);
+}
+
+#paiLoginCadastro #trocaLoginCadastro button:hover {
+    box-shadow: 0px 4px 4px -3px white;
+}
+
+#paiLoginCadastro #trocaLoginCadastro button:nth-child(odd) {
+    margin-left: 12.5%;
+    margin-right: 1%;
+}
+
+#paiLoginCadastro #trocaLoginCadastro #cadastro {
     height: 100%;
     width: 50%;
     position: relative;
-    background-color: blue;
+    background-color: rgba(255, 255, 255, 0.055);
 }
 
-#paiLoginCadastro #trocaLoginCadastro #cadastro form{
+#paiLoginCadastro #trocaLoginCadastro #cadastro form {
     height: 80%;
     width: 80%;
     margin-top: 10%;
     margin-left: 10%;
+    text-align: center;
 }
 
-#paiLoginCadastro #convite{
+#paiLoginCadastro #convite {
     height: 100%;
     width: 50%;
     position: absolute;
     top: 0%;
     left: 50%;
     z-index: 1;
-    background-color: yellow;
+    background-color: black;
 }
 
-.footer{
-    background-color: rgba(0,0,0,0.9);
+#paiLoginCadastro #convite #textoConvite {
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url(../img/fundoConvite.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#paiLoginCadastro #convite #textoConvite h3 {
+    font-size: 3vw;
+    height: 10%;
+    margin-top: 10%;
+    width: 95%;
+    margin-left: 5%;
+    transition: all 0.5s;
+}
+
+#paiLoginCadastro #convite #textoConvite h4 {
+    font-size: 6vw;
+    height: 80%;
+    width: 95%;
+    margin-left: 5%;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
     text-align: center;
 }
@@ -303,48 +384,44 @@ header .menu ul li a:hover{
 
 /* Inicio da responsividade */
 
-@media (max-width: 1100px){
-    #header{
-        width: 13%;
+@media (max-width: 1100px) {
+    #header {
+        width: 11%;
     }
-
     header .menu ul li {
         font-size: 3vw;
         margin-top: 15%;
     }
 }
 
-@media (max-width: 900px){
-    #header{
+@media (max-width: 900px) {
+    #header {
         width: 100%;
         height: 15vh;
         overflow: hidden;
     }
-
     header #logo {
         width: 20%;
         height: 100%;
-        margin-top: 2vh;
+        margin-top: 0vh;
         margin-left: 10%;
+        display: flex;
+        align-items: center;
     }
-
     header #logo img {
-        width: 100px;
-        height: 75%;
+        width: 80px;
+        height: 70px;
     }
-
     header .menu {
         width: 60%;
         height: 100%;
         float: left;
         margin-left: 0;
     }
-
     header .menu ul {
         margin-top: 4%;
         text-align: end;
     }
-
     header .menu ul li {
         display: block;
         text-decoration: none;
@@ -355,67 +432,55 @@ header .menu ul li a:hover{
     }
 }
 
-@media (max-width: 715px){
-    .container #servicos #descricaoServicos{
+@media (max-width: 715px) {
+    .container #servicos #descricaoServicos {
         font-size: 3vw;
         transition: all 0.7s
     }
-
-    .container #servicos #conhecerServicos{
+    .container #servicos #conhecerServicos {
         font-size: 2.2vw;
     }
-
     #imagemFundo #desfocar #fundoName #name {
         font-size: 10.5vw;
         transition: font-size 0.7s
     }
-
     #paiLoginCadastro #convite {
         display: none;
     }
-
     #paiLoginCadastro #trocaLoginCadastro {
         width: 200%;
     }
 }
 
-@media (max-width: 535px){
-    .container #servicos #conhecerServicos{
+@media (max-width: 535px) {
+    .container #servicos #conhecerServicos {
         font-size: 3vw;
         width: 40%;
         margin-left: 30%;
     }
 }
 
-@media (max-width: 455px){   
-
+@media (max-width: 455px) {
     header .menu ul li {
         font-size: 8vw;
         margin-top: 3.5vh;
     }
-
-    #imagemFundo #desfocar #fundoName #name{
+    #imagemFundo #desfocar #fundoName #name {
         top: 0%;
     }
-
-    #imagemFundo #desfocar #fundoName #name img{
+    #imagemFundo #desfocar #fundoName #name img {
         display: block;
         height: 70%;
         width: 85%;
         margin-left: 7.5%;
     }
-
-    .container #servicos #tituloServicos{
+    .container #servicos #tituloServicos {
         font-size: 8.5vw;
     }
-
-    .container #servicos #conhecerServicos{
+    .container #servicos #conhecerServicos {
         font-size: 4vw;
     }
-
     .container #servicos #descricaoServicos {
         font-size: 5vw;
     }
-
 }
-
